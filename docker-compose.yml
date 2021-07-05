@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+  react:
+    restart: always
+    build: react_app
+    command: npm start
+    env_file:
+        - ./.env
+  django:
+    restart: always
+    build: django
+    command: python3 django_project/manage.py runserver ${REACT_APP_DJANGO_IP}:${REACT_APP_DJANGO_PORT}
+    ports:
+      - ${REACT_APP_DJANGO_PORT}:${REACT_APP_DJANGO_PORT}
+    env_file:
+      - ./.env
+    expose:
+      - ${REACT_APP_DJANGO_PORT}
+  nginx:
+    restart: always
+    build: ./nginx
+    env_file:
+      - ./.env
+#    environment:
+#      VIRTUAL_HOST: monty.waller.rocks
+#      LETSENCRYPT_HOST: monty.waller.rocks
+#      LETSENCRYPT_EMAIL: thomas.r.waller@gmail.com
+    expose:
+      - 80
+      - 443
+    ports:
+      - "80:80"
+      - "443:443"
+#    volumes:
+#      - static_volume:/srv/monty_project/django/monty_app/static
+    links:
+      - react:react

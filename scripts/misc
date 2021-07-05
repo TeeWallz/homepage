@@ -1,0 +1,13 @@
+python3 -m venv
+
+docker-compose build
+docker-compose up -d
+
+docker-compose down -v
+docker-compose -f docker-compose.prod.yml up -d --build
+
+docker exec -it django_nginx_docker_boilerplate_nginx_1 sh
+apt update && apt install -y curl && curl localhost
+
+django-admin startproject project
+python manage.py startapp app

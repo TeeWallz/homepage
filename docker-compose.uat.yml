@@ -1,0 +1,36 @@
+version: "3.7"
+
+services:
+  web:
+    restart: always
+    command: python3 manage.py runserver 0.0.0.0:8000
+    #command: gunicorn monty_project.wsgi:application --bind 0.0.0.0:8000
+    build:
+        context: django
+        dockerfile: Dockerfile
+    volumes:
+      - static_volume:/srv/monty_project/django/monty_app/static
+    env_file:
+        - ./.env.uat
+    expose:
+        - 8000
+  nginx:
+    restart: always
+    build: ./nginx
+    environment:
+        VIRTUAL_HOST: host.examaple.com
+        LETSENCRYPT_HOST: host.examaple.com
+        LETSENCRYPT_EMAIL: thomas.r.waller@gmail.com
+    expose:
+      - 80
+      - 443
+    volumes:
+      - static_volume:/srv/monty_project/django/monty_app/static
+    links:
+      - django:django
+volumes:
+  static_volume:
+networks:
+  default:
+    external:
+      name: nginx-proxy
