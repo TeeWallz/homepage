@@ -22,6 +22,8 @@ RUN mkdir /srv/app
 COPY . /srv/app
 
 WORKDIR /srv/app/react_app
+
+RUN npm install npm -g
 RUN npm install
 
 ARG REACT_APP_REACT_PORT

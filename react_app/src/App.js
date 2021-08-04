@@ -1,6 +1,6 @@
 import React from 'react';
 import Urls from './Urls';
-// import Layout from './components/GlobalLayouts/Layout';
+import Layout from './components/Fragments/Layout'
 import {connect} from 'react-redux';
 import * as actions from './store/authActions';
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,33 +9,40 @@ import * as actions from './store/authActions';
 
 
 function App(props) {
-    // const [left, setleft] = React.useState(false)
-    // const [customToolbar, setCustomToolbar] = React.useState(false)
+    const [left, setleft] = React.useState(false)
+    const [customToolbar, setCustomToolbar] = React.useState(false)
 
-    // function toggleDrawer() {
-    //     // if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-    //     //   return;
-    //     // }
-    //
-    //     setleft(false);
-    // };
-    //
-    // function openDrawer() {
-    //     setleft(true);
-    // };
-    //
-    //
-    //
-    // // Similar to componentDidMount and componentDidUpdate:
-    // React.useEffect(() => {
-    //     props.setAuthenticatedIfRequired();
-    // }, []);
+    function toggleDrawer() {
+        // if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+        //   return;
+        // }
+
+        setleft(false);
+    };
+
+    function openDrawer() {
+        setleft(true);
+    };
+
+
+
+    // Similar to componentDidMount and componentDidUpdate:
+    React.useEffect(() => {
+        props.setAuthenticatedIfRequired();
+    }, []);
 
 
     console.log("APP > ", props)
     return (
         <div className="App">
-            <Urls  {...props} />
+            {/*<Layout toggleDrawer={toggleDrawer}*/}
+            {/*        openDrawer={openDrawer}*/}
+            {/*        left={left}*/}
+            {/*        setleft={setleft}*/}
+            {/*        customToolbar={customToolbar} setCustomToolbar={setCustomToolbar}*/}
+            {/*        {...props}>*/}
+                <Urls customToolbar={customToolbar} setCustomToolbar={setCustomToolbar} {...props} />
+            {/*</Layout>*/}
         </div>
     );
 }

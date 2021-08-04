@@ -5,6 +5,7 @@ import Home from "./components/Pages/Home";
 import NotFound from "./components/Pages/NotFound"
 import TodosSample from "./components/Pages/TodosSample"
 import StartPage from "./components/Pages/Links/StartPage";
+import Login from "./components/Pages/Login";
 
 // A wrapper for <Route> that redirects to the login screen if you're not yet authenticated.
 function PrivateRoute({ isAuthenticated, children, ...rest}) {
@@ -80,7 +81,10 @@ function Urls(props, someState) {
 
                      {/*<Route exact path="/" isAuthenticated={props.isAuthenticated}><Home {...props} someState={someState}/></Route>*/}
                     {/*<Route exact path="/todossample" component={TodosSample} />*/}
-                    <Route exact path="/" component={TodosSample} />
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/login/"> <Login {...props} /></Route>
+
+
                     <Route exact path="/startpage/:username/:startpagename" component={StartPage} />
                     <Route component={NotFound} />
                 </Switch>

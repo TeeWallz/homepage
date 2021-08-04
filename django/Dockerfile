@@ -15,20 +15,13 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 #Update
-RUN apk add --update  python3 py3-pip python3-dev uwsgi git
+RUN apk add --update  python3 py3-pip python3-dev uwsgi git mariadb-connector-c-dev gcc musl-dev build-base
 
-RUN apk add --no-cache --virtual .build-deps gcc musl-dev \
-     && pip install cython \
-     && apk del .build-deps gcc musl-dev
+RUN apk add --no-cache --virtual .build-deps  mariadb-dev   \
+     && pip install cython mysqlclient \
+     && apk del .build-deps musl-dev gcc
 
-RUN apk add --no-cache mariadb-connector-c-dev ;\
-    apk add --no-cache --virtual .build-deps \
-        build-base \
-        mariadb-dev ;\
-    pip install mysqlclient;\
-    apk del .build-deps
-
-RUN apk add --update mariadb-dev
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 # add this and below command will run without cache
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache

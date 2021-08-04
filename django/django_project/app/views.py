@@ -27,6 +27,9 @@ class DetailLinkData(viewsets.ModelViewSet):
 
         if 'pk' in self.kwargs.keys():
             return super().get_queryset(*args, **kwargs)
+        elif 'userlinks' in self.kwargs.keys():
+            links = LinkData.objects.filter(user__username=self.kwargs.get('userlinks'))
+            return links
         elif all(k in ['user', 'linkname'] for k in self.kwargs.keys()):
             links = LinkData.objects.filter(user__username=self.kwargs.get('user'), urlname=self.kwargs.get('linkname'))
             return links
