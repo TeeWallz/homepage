@@ -12,6 +12,7 @@ urlpatterns = [
 
 
     path('links/<int:pk>', views.DetailLinkData.as_view(actions={'get': 'list'})),
+    path('links/<int:pk>', views.DetailLinkData.as_view(actions={'get': 'list'})),
     path('links/<str:user>/<str:linkname>', views.DetailLinkData.as_view(actions={'get': 'list'})),
 
     path('style/<int:pk>', views.DetailStyleData.as_view(actions={'get': 'list'})),

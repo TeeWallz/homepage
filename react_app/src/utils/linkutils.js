@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 
-
+export const linkIdsAndNames = (links) =>{
+    return links.map(link => (
+        link.name
+    ));
+}
 
 
 

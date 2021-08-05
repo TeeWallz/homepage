@@ -29,38 +29,29 @@ class Home extends Component {
         console.log(process.env)
         console.log("----");
         return (
-            <div>
+            <div style={{width: "30vw"}}>
                 <h1>Here are your Links!</h1>
                 <hr/>
                 <table >
                     <tr>
                         <td style={{ verticalAlign: "baseline"}}>
-                            <table style={{    verticalAlign: "baseline"}}>
-                                <thead>
-                                <tr>
-                                    <td>Link Name</td>
-                                    <td>Show Links</td>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {this.state.links.map(link => (
-                                    <tr>
-                                        <td>{link.name}</td>
-                                        <td>
-                                            <button type="button">Show Links</button>
-                                        </td>
-                                    </tr>
-                                ))}
-                                </tbody>
-                            </table>
+                                <select multiple style={{width: "10vw"}}>
+                                    {this.state.links.map(link => (
+                                        <option>
+                                            {link.name}
+                                        </option>
+                                    ))}
+                                </select>
+                            <button>Edit Links</button>
                         </td>
-                        <td style={{"backgroundColor": "red"}}>
+                        <td style={{"backgroundColor": "salmon", width: "20vw"}}>
                             {this.state.links.map(link => (
                                 printLinksSimple(link)
                             ))}
                         </td>
                     </tr>
                 </table>
+                <hr/>
             </div>
         );
     }
