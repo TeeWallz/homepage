@@ -1,0 +1,103 @@
+[
+  {
+    "name": "News",
+      "links": [
+      {
+        "name": "SBS News",
+        "url": "https://www.sbs.com.au/news/"
+      },
+      {
+        "name": "Onet",
+        "url": "https://www.onet.pl/"
+      }
+    ]
+  },
+  {
+    "name": "Social",
+      "links": [
+      {
+        "name": "Gmail",
+        "url": "https://mail.google.com/mail/u/0/"
+      },
+      {
+        "name": "Reddit",
+        "url": "https://reddit.com/"
+      },
+      {
+        "name": "/a/",
+        "url": "https://boards.4channel.org/a/"
+      },
+      {
+        "name": "/g/",
+        "url": "https://boards.4channel.org/g/"
+      },
+      {
+        "name": "/v/",
+        "url": "https://boards.4channel.org/v/"
+      },
+      {
+        "name": "Telegram",
+        "url": "https://web.telegram.org/"
+      }
+      ]
+    },
+    {
+      "name": "Media",
+      "links": [
+      {
+        "name": "Radio Garden",
+        "url": "http://radio.garden/listen/tok/ZMah3fCw"
+      },
+      {
+        "name": "MAL",
+        "url": "https://myanimelist.net/profile/superraiden#"
+      },
+      {
+        "name": "Spotify",
+        "url": "https://open.spotify.com/"
+      },
+      {
+        "name": "1337x.to",
+        "url": "https://1337x.to/"
+      }
+    ]
+  },
+  {
+    "name": "Dev",
+    "links": [
+      {
+        "name": "Github",
+        "url": "https://github.com/"
+      },
+      {
+        "name": "Lightsail",
+        "url": "https://lightsail.aws.amazon.com/ls/webapp/home"
+      },
+      {
+        "name": "1337x.to",
+        "url": "https://1337x.to/"
+      }
+    ]
+  },
+  {
+    "name": "Polska",
+    "links": [
+      {
+        "name": "PONS Translator",
+        "url": "https://en.pons.com/text-translation"
+      },
+      {
+        "name": "Wikitionary",
+        "url": "https://en.wiktionary.org/wiki/Wiktionary:Main_Page"
+      },
+      {
+        "name": "OneDrive Polski",
+        "url": "https://onedrive.live.com/redir?resid=B6A3EF0A7D1AD7B%21120572&page=Edit&wd=target%28Homework.one%7C2a9279f5-1299-4ebc-9c6f-68177ec59293%2F%C5%9Awietnik%7C74932e67-4ff0-4441-859a-f7e9ec34b07a%2F%29"
+      },
+      {
+        "name": "Marcin Ledger",
+        "url": "https://onedrive.live.com/edit.aspx?cid=0b6a3ef0a7d1ad7b&page=view&resid=B6A3EF0A7D1AD7B!1597&parId=B6A3EF0A7D1AD7B!895&app=Excel&wacqt=search"
+      }
+    ]
+  }
+]

@@ -6,23 +6,23 @@ services:
     build: react_app
     command: npm start
     env_file:
-        - ./.env
+        - .env
   django:
     container_name: djangooooo
     restart: always
-    build: ./django
+    build: django
     command: python3 django_project/manage.py runserver1 ${REACT_APP_DJANGO_IP}:${REACT_APP_DJANGO_PORT}
     ports:
       - ${REACT_APP_DJANGO_PORT}:${REACT_APP_DJANGO_PORT}
     env_file:
-      - ./.env
+      - .env
     expose:
       - ${REACT_APP_DJANGO_PORT}
   nginx:
     restart: always
-    build: ./nginx
+    build: nginx
     env_file:
-      - ./.env
+      - .env
 #    environment:
 #      VIRTUAL_HOST: monty.waller.rocks
 #      LETSENCRYPT_HOST: monty.waller.rocks
